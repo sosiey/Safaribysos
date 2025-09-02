@@ -295,6 +295,61 @@
                 margin: 10px 0;
             }
         }
+/* ====== GUEST PHOTOS GALLERY ====== */
+
+#guest-photos {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.section-subtitle {
+  color: #666;
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+.guest-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.guest-photo-item {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.guest-photo-item:hover {
+  transform: translateY(-5px);
+}
+
+.guest-photo-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-caption {
+  padding: 15px;
+  font-size: 14px;
+  color: #555;
+  background: #fff;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Optional CTA container */
+.cta-container {
+  margin-top: 40px;
+  padding: 20px;
+}
     </style>
 </head>
 <body>
@@ -432,7 +487,33 @@
                 </div>
             </div>
         </section>
-        
+        <!-- ====== Guest Photos Section ====== -->
+<section id="guest-photos">
+  <h2>Guest Safari Moments</h2>
+  <p class="section-subtitle">Real experiences from real adventurers. Tag us to be featured!</p>
+
+  <div class="guest-gallery">
+    <!-- Photo 1 -->
+    <div class="guest-photo-item">
+      <img src="./images/guest-photos/nairobi-park-gate.jpg" alt="Guest at Nairobi National Park Main Gate">
+      <div class="photo-caption">Safari group at Nairobi National Park Main Gate</div>
+    </div>
+
+    <!-- Photo 2 -->
+    <div class="guest-photo-item">
+      <img src="./images/guest-photos/rhino-spotting.jpg" alt="Rhino spotting in Nairobi Park">
+      <div class="photo-caption">Black rhino sighting - Nairobi National Park</div>
+    </div>
+
+    <!-- Photo 3 -->
+    <div class="guest-photo-item">
+      <img src="./images/guest-photos/giraffe-encounter.jpg" alt="Giraffe near safari vehicle">
+      <div class="photo-caption">Close encounter with Maasai giraffe</div>
+    </div>
+
+    <!-- Add more photos below this line -->
+  </div>
+</section>
         <!-- Contact Section -->
         <section id="contact">
             <h2>Book Your Safari Adventure</h2>
