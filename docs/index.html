@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book authentic Kenyan safaris with Safari by SOS. Family-friendly tours, luxury packages, and wildlife adventures. M-Pesa/PayPal accepted.">
+<meta name="keywords" content="kenya safari, maasai mara tours, family safaris, nairobi wildlife">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sosiey.github.io/Safaribysos/">
+    <title>Safari by SOS</title>
+    <meta name="description" content="Experience authentic Kenyan safaris with Safari by SOS. Book family tours, luxury packages, and wildlife adventures with M-Pesa/PayPal payments.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://sosiey.github.io/Safaribysos/">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .logo span {
+            color: #e67e22;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #e67e22;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid #e67e22;
+        }
+        
+        .cta-button:hover {
+            background: transparent;
+            color: #e67e22;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #e67e22;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        
+        section {
+            margin-bottom: 60px;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+            color: #2c3e50;
+        }
+        
+        /* Safari Packages */
+        .packages {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .package-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            margin-bottom: 30px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .package-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .package-info {
+            padding: 20px;
+        }
+        
+        .package-info h3 {
+            margin-bottom: 10px;
+            color: #e67e22;
+        }
+        
+        .package-info p {
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+        
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 20px;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 48%;
+            margin-bottom: 30px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #e67e22;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #e67e22;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .package-card {
+                width: 100%;
+            }
+            
+            .testimonial {
+                width: 100%;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+/* ====== GUEST PHOTOS GALLERY ====== */
+
+#guest-photos {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.section-subtitle {
+  color: #666;
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+.guest-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.guest-photo-item {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.guest-photo-item:hover {
+  transform: translateY(-5px);
+}
+
+.guest-photo-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-caption {
+  padding: 15px;
+  font-size: 14px;
+  color: #555;
+  background: #fff;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Optional CTA container */
+.cta-container {
+  margin-top: 40px;
+  padding: 20px;
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Header/Hero Section -->
+    <header id="home">
+        <h1 class="logo">Safari by <span>SOS</span></h1>
+        <p class="tagline">Experience the wild like never before with our exclusive safari adventures. Discover Africa's majestic wildlife in their natural habitat.</p>
+        <a href="#packages" class="cta-button">Explore Packages</a>
+    </header>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Packages Section -->
+        <section id="packages">
+            <h2>Our Safari Packages</h2>
+            <div class="packages">
+                <div class="package-card">
+                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1505142468610-359e7d316be0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="package-info">
+                        <h3>Classic Safari Adventure</h3>
+                        <p>5-day safari through Kenya's most famous national parks. Includes guided tours, luxury camping, and wildlife spotting.</p>
+                        <p class="price">$1,499 per person</p>
+                        <a href="#contact" class="cta-button">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');"></div>
+                    <div class="package-info">
+                        <h3>Luxury Safari Experience</h3>
+                        <p>7-day premium safari with stays at 5-star lodges. Private guides, gourmet meals, and exclusive wildlife encounters.</p>
+                        <p class="price">$3,299 per person</p>
+                        <a href="#contact" class="cta-button">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80');"></div>
+                    <div class="package-info">
+                        <h3>Family Safari Package</h3>
+                        <p>4-day family-friendly safari with kid-friendly activities and accommodations. Educational and fun for all ages.</p>
+                        <p class="price">$2,699 for family of 4</p>
+                        <a href="#contact" class="cta-button">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gallery Section -->
+            <section id="gallery">
+  
+  <div class="gallery">
+    <!-- Lion -->
+    <div class="gallery-item" 
+         style="background-image: url('https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1590&q=80');"
+         title="Lion - King of the Savanna">
+    </div>
+
+    <!-- Leopard -->
+    <div class="gallery-item" 
+         style="background-image: url('https://images.unsplash.com/photo-1561731216-c3f4b5dfd2b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1590&q=80');"
+         title="Leopard - The Elusive Climber">
+    </div>
+
+    <!-- Elephant -->
+    <div class="gallery-item" 
+         style="background-image: url('https://images.unsplash.com/photo-1505148230895-d9a785a555fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1590&q=80');"
+         title="Elephant - Gentle Giant">
+    </div>
+<section id="gallery">
+  <h2>The Experiences</h2>
+  <div class="gallery">
+    <!-- Fine Dining -->
+    <div class="gallery-item" 
+         style="background-image: url('https://images.unsplash.com/photo-1609951651556-5334e2706168?ixlib=rb-4.0.3&auto=format&fit=crop&w=1590&q=80');"
+         title="Bush Dinner under the Stars">
+    </div>
+    <!-- Lion Hunt -->
+<div class="gallery-item" 
+     style="background-image: url('https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"
+     title="Lion Hunt in Maasai Mara">
+</div>
+
+<!-- Elephant Herd -->
+<div class="gallery-item" 
+     style="background-image: url('https://images.unsplash.com/photo-1505148230895-d9a785a555fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"
+     title="Elephant Herd at Amboseli">
+</div>
+    <!-- Sunset Over Savanna -->
+<div class="gallery-item" 
+     style="background-image: url('https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"
+     title="Savanna Sunset">
+</div>
+
+
+    <!-- Keep/Add other images (Big Five, etc.) -->
+  </div>
+</section>
+  
+</section>
+        
+        <!-- Testimonials Section -->
+        <section id="testimonials">
+            <h2>What Our Guests Say</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p class="testimonial-text">"The safari experience with SOS was absolutely incredible. Our guide was knowledgeable and we saw the Big Five within the first two days!"</p>
+                    <p class="testimonial-author">- Sarah Johnson, USA</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="testimonial-text">"From start to finish, everything was perfectly organized. The luxury lodges exceeded our expectations and the wildlife sightings were breathtaking."</p>
+                    <p class="testimonial-author">- Michael Chen, Australia</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="testimonial-text">"Our family had the best vacation ever. The kids learned so much about wildlife conservation while having fun. We'll definitely be back!"</p>
+                    <p class="testimonial-author">- The Rodriguez Family, Spain</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="testimonial-text">"The attention to detail and personalized service made this safari truly special. I've traveled all over the world and this was one of my best experiences."</p>
+                    <p class="testimonial-author">- Emma Wilson, UK</p>
+                </div>
+            </div>
+        </section>
+        <!-- ===== Guest Photos Section ===== -->
+<section id="guest-photos">
+  <h2>Guest Safari Moments</h2>
+  <p class="section-subtitle">Real experiences from real adventurers. Tag us to be featured!</p>
+
+  <div class="guest-gallery">
+    <!-- Photo 1 -->
+    <div class="guest-photo-item">
+      <img src="/Safaribysos/images/guest-photos/nairobi-park-gate.jpg" alt="Guest at Nairobi National Park Main Gate">
+      <div class="photo-caption">Safari group at Nairobi National Park Main Gate</div>
+    </div>
+
+    <!-- Photo 2 -->
+    <div class="guest-photo-item">
+      <img src="/Safaribysos/images/guest-photos/rhino-spotting.jpg" alt="Rhino spotting in Nairobi Park">
+      <div class="photo-caption">Black rhino sighting - Nairobi National Park</div>
+    </div>
+
+    <!-- Photo 3 -->
+    <div class="guest-photo-item">
+      <img src="/Safaribysos/images/guest-photos/giraffe-encounter.jpg" alt="Giraffe near safari vehicle">
+      <div class="photo-caption">Close encounter with Maasai giraffe</div>
+    </div>
+  </div>
+</section>
+  </div>
+</section>
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Book Your Safari Adventure</h2>
+            <div class="contact-form">
+              <form action="https://formsubmit.co/sosiego902@gmail.com" method="POST">
+  <!-- Required FormSubmit Hiddens -->
+  <input type="hidden" name="_subject" value="NEW Safari Booking!">
+  <input type="hidden" name="_template" value="table"> <!-- Organized email layout -->
+  <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html"> <!-- Confirmation page -->
+  
+  <!-- Form Fields -->
+  <div class="form-group">
+    <label>Full Name</label>
+    <input type="text" name="Name" required>
+  </div>
+  
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" name="Email" required>
+  </div>
+  
+  <div class="form-group">
+    <label>Phone (WhatsApp)</label>
+    <input type="tel" name="Phone" required>
+  </div>
+  
+  <div class="form-group">
+    <label>Package</label>
+    <select name="Package" required>
+      <option value="Family Safari">Family Safari</option>
+      <option value="Classic Safari">Classic Safari</option>
+      <option value="Luxury Safari">Luxury Safari</option>
+    </select>
+  </div>
+  
+  <button type="submit" class="cta-button">Book Now</button>
+</form>
+  
+  <!-- FormSubmit Config -->
+  <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+  <input type="hidden" name="_template" value="table"> <!-- Organized email layout -->
+</form>
+        </section>
+    </div>
+    
+    <a href="https://wa.me/254716658293?text=Hi%20Safari%20by%20SOS!%20I%20want%20to%20book%20a%20tour.%20Package:%20[select%20safari]" 
+   class="cta-button" 
+   style="background-color: #25D366;">
+   📱 Book via WhatsApp
+</a>
+    <!-- ======= Payment Section ======= -->
+<section id="payment">
+    <div class="container">
+        <h2>Book Now & Pay</h2>
+        <div class="payment-methods">
+            <!-- M-Pesa (Kenya) -->
+            <div class="payment-card">
+                <h3>M-Pesa (Kenya)</h3>
+                <p>Send payment via Lipa Na M-Pesa:</p>
+                <p><strong>Paybill:</strong> 714777</p>
+                <p><strong>Account:</strong> 440005620015</p>
+                <p>Or dial <strong>*334#</strong> and follow prompts.</p>
+                <p>Confirm via SMS to <a href="tel:+254716658293">+254 716 658 293</a>.</p>
+            </div>
+
+            <!-- Credit/Debit Card -->
+            <div class="payment-card">
+                <h3>Visa/Mastercard</h3>
+                <p>Pay securely via PayPal (no account needed):</p>
+                <a href="https://paypal.me/sosiego902" class="cta-button">Pay with PayPal</a>
+                <p>Or request an invoice at <a href="mailto:sosiego902@gmail.com">sosiego902@gmail.com</a>.</p>
+            </div>
+<div class="payment-card">
+  <h3>Visa/Mastercard</h3>
+  <p>Pay securely via PayPal (accepts Visa cards):</p>
+  <a href="https://paypal.me/sosiego902" class="cta-button" target="_blank">
+    Pay with Visa
+  </a>
+  <p>Receipts auto-sent to <strong>sosiego902@gmail.com</strong>.</p>
+</div>
+            <!-- Bitcoin/Crypto -->
+            <div class="payment-card">
+                <h3>Bitcoin/Crypto</h3>
+                <p>Send to this wallet address:</p>
+                <p><strong>BTC Address:</strong> <code>bc1qjf92u7qv8ayz5eunv7xu4w0ft3n58j9na7q7u4</code></p>
+                <p>Email proof of payment to <a href="mailto:sosiego902@gmail.com">sosiego902@gmail.com</a>.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Skrill -->
+<div class="payment-card">
+    <h3>Skrill</h3>
+    <p>Send payments directly to our Skrill account:</p>
+    <p><strong>Skrill ID:</strong> sosiego902@gmail.com</p>
+    
+    <a href="https://www.skrill.com" target="_blank" class="cta-button">Pay via Skrill</a>
+    <p>Email receipt to <a href="mailto:sosiego902@gmail.com">sosiego902@gmail.com</a> after payment.</p>
+</div>
+
+<script src="https://www.skrill.com/app/button.pl?script=1"></script>
+<button class="skrill-button"
+        data-pay_to_email="sosiego902@gmail.com"
+        data-amount="100.00"
+        data-currency="USD"
+        data-language="EN">
+  Pay with Skrill
+</button>
+<?php
+// Handle Skrill Instant Payment Notification (IPN)
+$transaction_id = $_POST['transaction_id'];
+$merchant_email = "sosiego902@gmail.com";
+
+// Verify with Skrill server
+$response = file_get_contents(
+  "https://www.skrill.com/app/query.pl?email=$merchant_email&transaction_id=$transaction_id"
+);
+
+if (strpos($response, "PROCESSED") !== false) {
+  // Payment successful
+  mail("sosiego902@gmail.com", "Skrill Payment Received", 
+       "Payment confirmed for TXN: $transaction_id");
+}
+?>
+<!-- Neteller -->
+<div class="payment-card">
+    <h3>Neteller</h3>
+    <p>Send payments to our Neteller account:</p>
+    <p><strong>Neteller ID:</strong> sosiego902@gmail.com</p>
+   
+    <a href="https://www.neteller.com" target="_blank" class="cta-button">Pay via Neteller</a>
+    <p>Email receipt to <a href="mailto:sosiego902@gmail.com">sosiego902@gmail.com</a> after payment.</p>
+</div>
+
+<div id="neteller-payment-form"></div>
+<script>
+  Neteller.init({
+    env: "test", // Change to "production" when live
+    merchantId: "YOUR_MERCHANT_ID",
+    paymentMethod: "neteller"
+  });
+  Neteller.embed("neteller-payment-form", {
+    payToEmail: "sosiego902@gmail.com",
+    amount: 100,
+    currency: "USD"
+  });
+</script>
+<?php
+// Neteller Webhook Handler
+$payload = json_decode(file_get_contents('php://input'), true);
+
+if ($payload['eventType'] == "payment.finished") {
+  if ($payload['data']['payToEmail'] == "sosiego902@gmail.com") {
+    // Valid payment
+    file_put_contents("payments.log", 
+      "Neteller payment: " . $payload['data']['amount'] . " " . 
+      $payload['data']['currency'] . "\n", 
+      FILE_APPEND);
+  }
+}
+?>
+</section>
+    <!-- Footer -->
+    <footer>
+        <h3>Safari by SOS</h3>
+        <p>Discover the wild, experience the extraordinary</p>
+        
+        <div class="social-links">
+</html>
