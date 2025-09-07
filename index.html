@@ -172,21 +172,20 @@
             font-size: 1.2rem;
             color: #2c3e50;
         }
-        .package-features {
-  margin: 15px 0;
-  padding-left: 20px;
+        .package-image {
+  height: 250px; /* Increased height for better visibility */
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
 }
 
-.package-features li {
-  list-style-type: '🐾';
-  padding-left: 10px;
-  margin-bottom: 8px;
+.package-card:hover .package-image {
+  transform: scale(1.05); /* Zoom effect on hover */
 }
 
-.price small {
-  font-size: 0.9rem;
-  color: #777;
-        }
+.package-info {
+  padding: 25px;
+}
         /* Gallery */
         .gallery {
             display: grid;
@@ -420,10 +419,10 @@
                         <a href="#contact" class="cta-button">Book Now</a>
                     </div>
                 <div class="package-card">
-  <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1590069261124-8c58c8be4f3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+  <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1598880796842-93e8dfd72c04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
   <div class="package-info">
     <h3>Nairobi National Park Day Trip</h3>
-    <p><strong>Perfect for quick getaways & families</strong></p>
+    <p><strong>Wilderness at the City's Doorstep</strong></p>
     <ul class="package-features">
       <li>✅ 6-hour guided game drive</li>
       <li>✅ Picnic lunch at hippo pools</li>
@@ -435,10 +434,10 @@
     <a href="#contact" class="cta-button">Book Day Trip</a>
   </div>
 </div><div class="package-card">
-  <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1561503972-839d0c56bb24?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+  <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
   <div class="package-info">
     <h3>Diani Beach Luxury Escape</h3>
-    <p><strong>3 Days of coastal paradise</strong></p>
+    <p><strong>3 Days of Coastal Paradise</strong></p>
     <ul class="package-features">
       <li>✅ 2 nights at 5-star beach resort</li>
       <li>✅ All meals included (gourmet dining)</li>
@@ -726,6 +725,7 @@ if ($payload['eventType'] == "payment.finished") {
         
         <div class="social-links">
 </html>
+
 
 
 
