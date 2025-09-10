@@ -365,6 +365,69 @@
 }
     </style>
 </head>
+    <!-- ====== WhatsApp Floating Button ====== -->
+<a href="https://wa.me/254716658293?text=Hi%20Safari%20by%20SOS!%20I'm%20interested%20in%20booking%20a%20safari." 
+   class="whatsapp-float" 
+   target="_blank">
+   <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" width="40" alt="WhatsApp">
+</a>
+
+<!-- ====== Tawk.to Live Chat Widget ====== -->
+<script type="text/javascript">
+var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+(function() {
+var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+s1.async = true;
+s1.src = 'https://embed.tawk.to/68c0fd8b5ec5391930b32e38/default';
+s1.charset = 'UTF-8';
+s1.setAttribute('crossorigin', '*');
+s0.parentNode.insertBefore(s1, s0);
+})();
+</script>
+
+<style>
+/* WhatsApp Button Styles */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25D366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+  z-index: 1000;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.whatsapp-float:hover {
+  background: #128C7E;
+  transform: scale(1.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .whatsapp-float img {
+    width: 30px;
+  }
+}
+</style>
 <body>
     <!-- Navigation -->
     <nav>
@@ -725,6 +788,7 @@ if ($payload['eventType'] == "payment.finished") {
         
         <div class="social-links">
 </html>
+
 
 
 
