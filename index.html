@@ -362,6 +362,79 @@
 .cta-container {
   margin-top: 40px;
   padding: 20px;
+}.package-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+}
+
+.package-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.package-info {
+  padding: 20px;
+}
+
+.package-info h3 {
+  color: #2c3e50;
+  margin-bottom: 5px;
+  font-size: 1.3em;
+}
+
+.package-info > p {
+  color: #e67e22;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.package-features {
+  margin: 15px 0;
+  padding: 0;
+}
+
+.package-features li {
+  list-style: none;
+  padding: 5px 0;
+  padding-left: 25px;
+  position: relative;
+}
+
+.package-features li::before {
+  content: "✔️";
+  position: absolute;
+  left: 0;
+  color: #27ae60;
+}
+
+.price {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 15px 0;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #e67e22;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #d35400;
 }
     </style>
 </head>
@@ -419,37 +492,34 @@
                         <a href="#contact" class="cta-button">Book Now</a>
                     </div>
                 <div class="package-card">
-  <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1598880796842-93e8dfd72c04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+  <div class="package-image" style="background-image: url('images/packages/nairobi-animal.jpg');"></div>
   <div class="package-info">
-    <h3>Nairobi National Park Day Trip</h3>
-    <p><strong>Wilderness at the City's Doorstep</strong></p>
+    <h3>Nairobi Park Experience</h3>
+    <p><strong>Wilderness in the City</strong></p>
     <ul class="package-features">
-      <li>✅ 6-hour guided game drive</li>
-      <li>✅ Picnic lunch at hippo pools</li>
-      <li>✅ Hotel pickup/dropoff within Nairobi</li>
-      <li>✅ Professional wildlife guide</li>
+      <li>✅ 6-Hour Game Drive</li>
+      <li>✅ Big 4 Spotting (Lions, Rhinos, Leopards, Buffalo)</li>
+      <li>✅ Picnic Lunch at Kingfisher picnic site</li>
+      <li>✅ Hotel Pickup & Dropoff</li>
     </ul>
-    <p class="price">$99 <small>per adult</small></p>
-    <p class="price">$49 <small>per child (under 12)</small></p>
-    <a href="#contact" class="cta-button">Book Day Trip</a>
+    <p class="price">$99 / adult | $49 / child</p>
+    <a href="#contact" class="cta-button">Book City Safari</a>
   </div>
 </div><div class="package-card">
-  <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+  <div class="package-image" style="background-image: url('images/packages/diani-resort-beach.jpg');"></div>
   <div class="package-info">
-    <h3>Diani Beach Luxury Escape</h3>
-    <p><strong>3 Days of Coastal Paradise</strong></p>
+    <h3>Diani Beach Paradise</h3>
+    <p><strong>3-Day Luxury Escape</strong></p>
     <ul class="package-features">
-      <li>✅ 2 nights at 5-star beach resort</li>
-      <li>✅ All meals included (gourmet dining)</li>
-      <li>✅ Snorkeling & dolphin watching</li>
-      <li>✅ Spa treatment (1 session)</li>
-      <li>✅ Airport transfers from Mombasa</li>
+      <li>✅ Beachfront 5-Star Resort</li>
+      <li>✅ Perfect for Weddings & Honeymoons</li>
+      <li>✅ Snorkeling & Dolphin Tours</li>
+      <li>✅ Spa & Gourmet Dining</li>
     </ul>
-    <p class="price">$899 <small>per person (all inclusive)</small></p>
-    <a href="#contact" class="cta-button">Book Beach Escape</a>
+    <p class="price">$899 all inclusive</p>
+    <a href="#contact" class="cta-button">Book Paradise</a>
   </div>
 </div>
-            </div>
         </section>
         
         <!-- Gallery Section -->
@@ -789,6 +859,7 @@ s0.parentNode.insertBefore(s1, s0);
 </style>
             
 </html>
+
 
 
 
