@@ -435,6 +435,66 @@
 
 .cta-button:hover {
   background: #d35400;
+}/* ====== GALLERY HOVER EFFECTS ====== */
+.gallery-item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.gallery-item:hover::before {
+  opacity: 1;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Blur effect on hover */
+.gallery-item:hover ~ .gallery-item {
+  filter: blur(3px);
+        }.image-caption {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  transition: bottom 0.4s ease;
+  z-index: 2;
+}
+
+.gallery-item:hover .image-caption {
+  bottom: 0;
 }
     </style>
 </head>
@@ -520,59 +580,50 @@
     <a href="#contact" class="cta-button">Book Paradise</a>
   </div>
 </div>
-        </section>
         
-        <!-- Gallery Section -->
-            <section id="gallery">
-  
   <div class="gallery">
-    <!-- Lion -->
-    <div class="gallery-item" 
-         style="background-image: url('https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1590&q=80');"
-         title="Lion - King of the Savanna">
-    </div>
-
-    <!-- Leopard -->
-    <div class="gallery-item" 
-         style="background-image: url('https://images.unsplash.com/photo-1561731216-c3f4b5dfd2b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1590&q=80');"
-         title="Leopard - The Elusive Climber">
-    </div>
-
-    <!-- Elephant -->
-    <div class="gallery-item" 
-         style="background-image: url('https://images.unsplash.com/photo-1505148230895-d9a785a555fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1590&q=80');"
-         title="Elephant - Gentle Giant">
-    </div>
-<section id="gallery">
-  <h2>The Experiences</h2>
-  <div class="gallery">
-    <!-- Fine Dining -->
-    <div class="gallery-item" 
-         style="background-image: url('https://images.unsplash.com/photo-1609951651556-5334e2706168?ixlib=rb-4.0.3&auto=format&fit=crop&w=1590&q=80');"
-         title="Bush Dinner under the Stars">
-    </div>
-    <!-- Lion Hunt -->
-<div class="gallery-item" 
-     style="background-image: url('https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"
-     title="Lion Hunt in Maasai Mara">
-</div>
-
-<!-- Elephant Herd -->
-<div class="gallery-item" 
-     style="background-image: url('https://images.unsplash.com/photo-1505148230895-d9a785a555fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"
-     title="Elephant Herd at Amboseli">
-</div>
-    <!-- Sunset Over Savanna -->
-<div class="gallery-item" 
-     style="background-image: url('https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"
-     title="Savanna Sunset">
-</div>
-
-
-    <!-- Keep/Add other images (Big Five, etc.) -->
+  <!-- Leopard -->
+  <div class="gallery-item">
+    <img src="images/experiences/leopard.jpg" alt="Leopard in tree">
+    <div class="image-caption">Tree-Climbing Leopard</div>
   </div>
-</section>
-  
+
+  <!-- Lion Pride -->
+  <div class="gallery-item">
+    <img src="images/experiences/lion-pride.jpg" alt="Lion pride resting">
+    <div class="image-caption">Lion Pride Family</div>
+  </div>
+
+  <!-- Lion -->
+  <div class="gallery-item">
+    <img src="images/experiences/lion.jpg" alt="Majestic lion">
+    <div class="image-caption">King of the Savannah</div>
+  </div>
+
+  <!-- Mara -->
+  <div class="gallery-item">
+    <img src="images/experiences/mara.jpg" alt="Maasai Mara landscape">
+    <div class="image-caption">Maasai Mara Plains</div>
+  </div>
+
+  <!-- Nakuru -->
+  <div class="gallery-item">
+    <img src="images/experiences/nakuru.jpg" alt="Lake Nakuru flamingos">
+    <div class="image-caption">Flamingos at Lake Nakuru</div>
+  </div>
+
+  <!-- Tent -->
+  <div class="gallery-item">
+    <img src="images/experiences/tent.jpg" alt="Luxury safari tent">
+    <div class="image-caption">Luxury Tent Experience</div>
+  </div>
+
+  <!-- Wildebeest -->
+  <div class="gallery-item">
+    <img src="images/experiences/wildebeest.jpg" alt="Great Migration wildebeest">
+    <div class="image-caption">Great Migration Spectacle</div>
+  </div>
+</div>
 </section>
         
         <!-- Testimonials Section -->
@@ -859,6 +910,7 @@ s0.parentNode.insertBefore(s1, s0);
 </style>
             
 </html>
+
 
 
 
