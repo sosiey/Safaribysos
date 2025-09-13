@@ -495,7 +495,95 @@
 
 .gallery-item:hover .image-caption {
   bottom: 0;
+}/* ====== MODERN GALLERY STYLES ====== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 30px 0;
 }
+
+.gallery-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+  height: 280px;
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Overlay effect */
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.gallery-item:hover::before {
+  opacity: 1;
+}
+
+/* Caption styling */
+.image-caption {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  transition: bottom 0.4s ease;
+  z-index: 2;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.gallery-item:hover .image-caption {
+  bottom: 0;
+}
+
+/* Blur effect on other items during hover */
+.gallery-item:hover ~ .gallery-item,
+.gallery-item:has(~ .gallery-item:hover) {
+  filter: blur(2px);
+  opacity: 0.9;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .gallery-item {
+    height: 250px;
+  }
+        }
     </style>
 </head>
 <body>
@@ -581,49 +669,54 @@
   </div>
 </div>
         
-  <div class="gallery">
-  <!-- Leopard -->
-  <div class="gallery-item">
-    <img src="images/experiences/leopard.jpg" alt="Leopard in tree">
-    <div class="image-caption">Tree-Climbing Leopard</div>
-  </div>
+  <!-- ====== Experiences Gallery Section ====== -->
+<section id="gallery">
+  <h2>Wilderness Experiences</h2>
+  <p class="section-subtitle">Immerse yourself in Kenya's most breathtaking moments</p>
 
-  <!-- Lion Pride -->
-  <div class="gallery-item">
-    <img src="images/experiences/lion-pride.jpg" alt="Lion pride resting">
-    <div class="image-caption">Lion Pride Family</div>
-  </div>
+  <div class="gallery-grid">
+    <!-- Leopard -->
+    <div class="gallery-item">
+      <img src="images/experiences/Leopard.jpg" alt="Leopard in tree">
+      <div class="image-caption">Tree-Climbing Leopard</div>
+    </div>
 
-  <!-- Lion -->
-  <div class="gallery-item">
-    <img src="images/experiences/lion.jpg" alt="Majestic lion">
-    <div class="image-caption">King of the Savannah</div>
-  </div>
+    <!-- Lion Pride -->
+    <div class="gallery-item">
+      <img src="images/experiences/Lion-pride.jpg" alt="Lion pride resting">
+      <div class="image-caption">Lion Pride Family</div>
+    </div>
 
-  <!-- Mara -->
-  <div class="gallery-item">
-    <img src="images/experiences/mara.jpg" alt="Maasai Mara landscape">
-    <div class="image-caption">Maasai Mara Plains</div>
-  </div>
+    <!-- Lion -->
+    <div class="gallery-item">
+      <img src="images/experiences/Lion.jpg" alt="Majestic lion">
+      <div class="image-caption">King of the Savannah</div>
+    </div>
 
-  <!-- Nakuru -->
-  <div class="gallery-item">
-    <img src="images/experiences/nakuru.jpg" alt="Lake Nakuru flamingos">
-    <div class="image-caption">Flamingos at Lake Nakuru</div>
-  </div>
+    <!-- Mara -->
+    <div class="gallery-item">
+      <img src="images/experiences/Mara.jpg" alt="Maasai Mara landscape">
+      <div class="image-caption">Maasai Mara Plains</div>
+    </div>
 
-  <!-- Tent -->
-  <div class="gallery-item">
-    <img src="images/experiences/tent.jpg" alt="Luxury safari tent">
-    <div class="image-caption">Luxury Tent Experience</div>
-  </div>
+    <!-- Nakuru -->
+    <div class="gallery-item">
+      <img src="images/experiences/Nakuru.jpg" alt="Lake Nakuru flamingos">
+      <div class="image-caption">Flamingos at Lake Nakuru</div>
+    </div>
 
-  <!-- Wildebeest -->
-  <div class="gallery-item">
-    <img src="images/experiences/wildebeest.jpg" alt="Great Migration wildebeest">
-    <div class="image-caption">Great Migration Spectacle</div>
+    <!-- Tent -->
+    <div class="gallery-item">
+      <img src="images/experiences/Tent.jpg" alt="Luxury safari tent">
+      <div class="image-caption">Luxury Tent Experience</div>
+    </div>
+
+    <!-- Wildebeest -->
+    <div class="gallery-item">
+      <img src="images/experiences/Wildbeast.jpg" alt="Great Migration wildebeest">
+      <div class="image-caption">Great Migration Spectacle</div>
+    </div>
   </div>
-</div>
 </section>
         
         <!-- Testimonials Section -->
@@ -910,6 +1003,7 @@ s0.parentNode.insertBefore(s1, s0);
 </style>
             
 </html>
+
 
 
 
