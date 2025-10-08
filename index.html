@@ -127,64 +127,118 @@
             color: #2c3e50;
         }
         
-        /* Safari Packages */
-        .packages {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        
-        .package-card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            width: 30%;
-            margin-bottom: 30px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-        
-        .package-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .package-image {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .package-info {
-            padding: 20px;
-        }
-        
-        .package-info h3 {
-            margin-bottom: 10px;
-            color: #e67e22;
-        }
-        
-        .package-info p {
-            margin-bottom: 15px;
-        }
-        
-        .price {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: #2c3e50;
-        }
-        .package-image {
-  height: 250px; /* Increased height for better visibility */
-  background-size: cover;
-  background-position: center;
+        /* ====== SIMPLE BOOK LAYOUT ====== */
+.book-layout {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 30px 10px;
+  scrollbar-width: none;
+}
+
+.book-layout::-webkit-scrollbar {
+  display: none;
+}
+
+.book-page {
+  scroll-snap-align: start;
+  min-width: 85%;
+  flex-shrink: 0;
+}
+
+.package-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
 
-.package-card:hover .package-image {
-  transform: scale(1.05); /* Zoom effect on hover */
+.package-card:hover {
+  transform: translateY(-5px);
+}
+
+.package-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
 }
 
 .package-info {
   padding: 25px;
+}
+
+.package-info h3 {
+  color: #2c3e50;
+  margin-bottom: 8px;
+  font-size: 1.3em;
+}
+
+.package-subtitle {
+  color: #e67e22;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 1em;
+}
+
+.package-features {
+  margin: 20px 0;
+}
+
+.feature-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  color: #555;
+  font-size: 15px;
+}
+
+.feature-item:last-child {
+  border-bottom: none;
+}
+
+.price {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 20px 0;
+  text-align: center;
+}
+
+/* Navigation Dots */
+.page-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ddd;
+  transition: background 0.3s ease;
+}
+
+.dot.active {
+  background: #e67e22;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .book-page {
+    min-width: 90%;
+  }
+  
+  .book-layout {
+    gap: 15px;
+    padding: 20px 5px;
+  }
+  
+  .package-info {
+    padding: 20px;
+  }
 }
         /* Gallery */
         .gallery {
@@ -670,175 +724,228 @@
     
     <!-- Main Content -->
     <div class="container">
-        <!-- Packages Section -->
-        <section id="packages">
-            <h2>Our Safari Packages</h2>
-            <div class="packages">
-                <div class="package-card">
-                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1505142468610-359e7d316be0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                    <div class="package-info">
-                        <h3>Classic Safari Adventure</h3>
-                        <p>5-day safari through Kenya's most famous national parks. Includes guided tours, luxury camping, and wildlife spotting.</p>
-                        <p class="price">$1,499 per person</p>
-                        <a href="#contact" class="cta-button">Book Now</a>
-                    </div>
-                </div>
-                
-                <div class="package-card">
-                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');"></div>
-                    <div class="package-info">
-                        <h3>Luxury Safari Experience</h3>
-                        <p>7-day premium safari with stays at 5-star lodges. Private guides, gourmet meals, and exclusive wildlife encounters.</p>
-                        <p class="price">$3,299 per person</p>
-                        <a href="#contact" class="cta-button">Book Now</a>
-                    </div>
-                </div>
-                
-                <div class="package-card">
-                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80');"></div>
-                    <div class="package-info">
-                        <h3>Family Safari Package</h3>
-                        <p>4-day family-friendly safari with kid-friendly activities and accommodations. Educational and fun for all ages.</p>
-                        <p class="price">$2,699 for family of 4</p>
-                        <a href="#contact" class="cta-button">Book Now</a>
-                    </div>
-                </div>
-                <!-- ====== ROMANTIC HONEYMOON PACKAGE ====== -->
-<div class="package-card">
-  <div class="package-image" style="background-image: url('images/packages/Romantic.jpg');"></div>
-  <div class="package-info">
-    <h3>Kenya Honeymoon Escape</h3>
-    <p class="package-subtitle">Safari + Beach Romance</p>
-    <div class="package-features">
-      <div class="feature-item">3 days Maasai Mara luxury camp</div>
-      <div class="feature-item">4 days Diani Beach resort</div>
-      <div class="feature-item">Private guides & romantic dinners</div>
-      <div class="feature-item">Honeymoon photography session</div>
+        <!-- ====== SAFARI PACKAGES BOOK ====== -->
+<section id="packages">
+  <h2>Our Safari Experiences</h2>
+  <p class="section-subtitle">Browse our collection of unforgettable adventures</p>
+
+  <div class="book-layout">
+    <!-- Page 1 - Classic Safari -->
+    <div class="book-page">
+      <div class="package-card">
+        <div class="package-image" style="background-image: url('images/packages/classic-safari.jpg');"></div>
+        <div class="package-info">
+          <h3>Classic Safari Adventure</h3>
+          <p class="package-subtitle">5-Day Maasai Mara</p>
+          <div class="package-features">
+            <div class="feature-item">Guided game drives</div>
+            <div class="feature-item">Luxury camping</div>
+            <div class="feature-item">Big Five spotting</div>
+            <div class="feature-item">Professional guides</div>
+          </div>
+          <p class="price">$1,499 per person</p>
+          <a href="#contact" class="cta-button">Book Now</a>
+        </div>
+      </div>
     </div>
-    <p class="price">$3,299 per couple</p>
-    <a href="#contact" class="cta-button">Book Romance</a>
-  </div>
-</div>
 
-<!-- ====== PHOTOGRAPHY SAFARI ====== -->
-<div class="package-card">
-  <div class="package-image" style="background-image: url('images/packages/Photographic.jpg');"></div>
-  <div class="package-info">
-    <h3>Photography Workshop Safari</h3>
-    <p class="package-subtitle">Capture Perfect Wildlife Shots</p>
-    <div class="package-features">
-      <div class="feature-item">Professional photographer guide</div>
-      <div class="feature-item">Golden hour game drives</div>
-      <div class="feature-item">Photography lessons included</div>
-      <div class="feature-item">5-day intensive workshop</div>
+    <!-- Page 2 - Luxury Safari -->
+    <div class="book-page">
+      <div class="package-card">
+        <div class="package-image" style="background-image: url('images/packages/luxury-safari.jpg');"></div>
+        <div class="package-info">
+          <h3>Luxury Safari Experience</h3>
+          <p class="package-subtitle">7-Day Premium</p>
+          <div class="package-features">
+            <div class="feature-item">5-star lodges</div>
+            <div class="feature-item">Private guides</div>
+            <div class="feature-item">Gourmet dining</div>
+            <div class="feature-item">Exclusive access</div>
+          </div>
+          <p class="price">$3,299 per person</p>
+          <a href="#contact" class="cta-button">Book Now</a>
+        </div>
+      </div>
     </div>
-    <p class="price">$2,499 per person</p>
-    <a href="#contact" class="cta-button">Book Workshop</a>
-  </div>
-</div>
 
-<!-- ====== SAMBURU LUXURY SAFARI ====== -->
-<div class="package-card">
-  <div class="package-image" style="background-image: url('images/packages/Samburu.jpg');"></div>
-  <div class="package-info">
-    <h3>Samburu Special Five</h3>
-    <p class="package-subtitle">Exclusive Northern Kenya Experience</p>
-    <div class="package-features">
-      <div class="feature-item">See the "Special Five" unique species</div>
-      <div class="feature-item">Luxury tented camp with river views</div>
-      <div class="feature-item">Cultural visits to Samburu villages</div>
-      <div class="feature-item">4-day all-inclusive experience</div>
+    <!-- Page 3 - Family Safari -->
+    <div class="book-page">
+      <div class="package-card">
+        <div class="package-image" style="background-image: url('images/packages/family-safari.jpg');"></div>
+        <div class="package-info">
+          <h3>Family Safari Package</h3>
+          <p class="package-subtitle">4-Day Family Fun</p>
+          <div class="package-features">
+            <div class="feature-item">Kid-friendly activities</div>
+            <div class="feature-item">Family accommodations</div>
+            <div class="feature-item">Educational tours</div>
+            <div class="feature-item">Safety first approach</div>
+          </div>
+          <p class="price">$2,699 for family of 4</p>
+          <a href="#contact" class="cta-button">Book Now</a>
+        </div>
+      </div>
     </div>
-    <p class="price">$1,899 per person</p>
-    <a href="#contact" class="cta-button">Book Luxury</a>
-  </div>
-</div>
 
-<!-- ====== LAKE NAKURU FLAMINGO SPECIAL ====== -->
-<div class="package-card">
-  <div class="package-image" style="background-image: url('images/packages/Flamingo.jpg');"></div>
-  <div class="package-info">
-    <h3>Pink Lakeside Escape</h3>
-    <p class="package-subtitle">Flamingo Spectacle at Lake Nakuru</p>
-    <div class="package-features">
-      <div class="feature-item">Thousands of pink flamingos</div>
-      <div class="feature-item">Rhino sanctuary visit</div>
-      <div class="feature-item">Baboon cliff viewpoints</div>
-      <div class="feature-item">2-day luxury lodge stay</div>
+    <!-- Page 4 - Nairobi Park -->
+    <div class="book-page">
+      <div class="package-card">
+        <div class="package-image" style="background-image: url('images/packages/nairobi-animal.jpg');"></div>
+        <div class="package-info">
+          <h3>Nairobi Park Experience</h3>
+          <p class="package-subtitle">Wilderness in the City</p>
+          <div class="package-features">
+            <div class="feature-item">6-Hour Game Drive</div>
+            <div class="feature-item">Big 4 Spotting</div>
+            <div class="feature-item">Picnic Lunch at Hippo Pools</div>
+            <div class="feature-item">Hotel Pickup & Dropoff</div>
+          </div>
+          <p class="price">$99 / adult | $49 / child</p>
+          <a href="#contact" class="cta-button">Book City Safari</a>
+        </div>
+      </div>
     </div>
-    <p class="price">$449 per person</p>
-    <a href="#contact" class="cta-button">Book Lakeside</a>
-  </div>
-</div>
 
-<!-- ====== HELL'S GATE ADVENTURE ====== -->
-<div class="package-card">
-  <div class="package-image" style="background-image: url('images/packages/Hellsgate.jpg');"></div>
-  <div class="package-info">
-    <h3>Hell's Gate Adventure</h3>
-    <p class="package-subtitle">Cycle Among Wildlife</p>
-    <div class="package-features">
-      <div class="feature-item">Mountain biking through canyons</div>
-      <div class="feature-item">Rock climbing at Fischer's Tower</div>
-      <div class="feature-item">Geothermal spa experience</div>
-      <div class="feature-item">Day trip from Nairobi</div>
+    <!-- Page 5 - Diani Beach -->
+    <div class="book-page">
+      <div class="package-card">
+        <div class="package-image" style="background-image: url('images/packages/diani-resort-beach.jpg');"></div>
+        <div class="package-info">
+          <h3>Diani Beach Paradise</h3>
+          <p class="package-subtitle">3-Day Luxury Escape</p>
+          <div class="package-features">
+            <div class="feature-item">Beachfront 5-Star Resort</div>
+            <div class="feature-item">Perfect for Weddings & Honeymoons</div>
+            <div class="feature-item">Snorkeling & Dolphin Tours</div>
+            <div class="feature-item">Spa & Gourmet Dining</div>
+          </div>
+          <p class="price">$899 all inclusive</p>
+          <a href="#contact" class="cta-button">Book Paradise</a>
+        </div>
+      </div>
     </div>
-    <p class="price">$129 per person</p>
-    <a href="#contact" class="cta-button">Book Adventure</a>
-  </div>
-</div>
 
-<!-- ====== KENYA BUDGET SAFARI ====== -->
-<div class="package-card">
-  <div class="package-image" style="background-image: url('images/packages/Budget.jpg');"></div>
-  <div class="package-info">
-    <h3>Budget Safari Experience</h3>
-    <p class="package-subtitle">Amazing Wildlife, Affordable Price</p>
-    <div class="package-features">
-      <div class="feature-item">3-day Maasai Mara camping</div>
-      <div class="feature-item">Group joining safari</div>
-      <div class="feature-item">All park fees included</div>
-      <div class="feature-item">Perfect for backpackers</div>
+    <!-- Page 6 - Honeymoon -->
+    <div class="book-page">
+      <div class="package-card">
+        <div class="package-image" style="background-image: url('images/packages/Romantic.jpg');"></div>
+        <div class="package-info">
+          <h3>Kenya Honeymoon Escape</h3>
+          <p class="package-subtitle">Safari + Beach Romance</p>
+          <div class="package-features">
+            <div class="feature-item">3 days Maasai Mara luxury camp</div>
+            <div class="feature-item">4 days Diani Beach resort</div>
+            <div class="feature-item">Private guides & romantic dinners</div>
+            <div class="feature-item">Honeymoon photography session</div>
+          </div>
+          <p class="price">$3,299 per couple</p>
+          <a href="#contact" class="cta-button">Book Romance</a>
+        </div>
+      </div>
     </div>
-    <p class="price">$399 per person</p>
-    <a href="#contact" class="cta-button">Book Budget</a>
+
+    <!-- Page 7 - Photography -->
+    <div class="book-page">
+      <div class="package-card">
+        <div class="package-image" style="background-image: url('images/packages/Photographic.jpg');"></div>
+        <div class="package-info">
+          <h3>Photography Workshop Safari</h3>
+          <p class="package-subtitle">Capture Perfect Wildlife Shots</p>
+          <div class="package-features">
+            <div class="feature-item">Professional photographer guide</div>
+            <div class="feature-item">Golden hour game drives</div>
+            <div class="feature-item">Photography lessons included</div>
+            <div class="feature-item">5-day intensive workshop</div>
+          </div>
+          <p class="price">$2,499 per person</p>
+          <a href="#contact" class="cta-button">Book Workshop</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 8 - Samburu -->
+    <div class="book-page">
+      <div class="package-card">
+        <div class="package-image" style="background-image: url('images/packages/Samburu.jpg');"></div>
+        <div class="package-info">
+          <h3>Samburu Special Five</h3>
+          <p class="package-subtitle">Exclusive Northern Kenya Experience</p>
+          <div class="package-features">
+            <div class="feature-item">See the "Special Five" unique species</div>
+            <div class="feature-item">Luxury tented camp with river views</div>
+            <div class="feature-item">Cultural visits to Samburu villages</div>
+            <div class="feature-item">4-day all-inclusive experience</div>
+          </div>
+          <p class="price">$1,899 per person</p>
+          <a href="#contact" class="cta-button">Book Luxury</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 9 - Lake Nakuru -->
+    <div class="book-page">
+      <div class="package-card">
+        <div class="package-image" style="background-image: url('images/packages/Flamingo.jpg');"></div>
+        <div class="package-info">
+          <h3>Pink Lakeside Escape</h3>
+          <p class="package-subtitle">Flamingo Spectacle at Lake Nakuru</p>
+          <div class="package-features">
+            <div class="feature-item">Thousands of pink flamingos</div>
+            <div class="feature-item">Rhino sanctuary visit</div>
+            <div class="feature-item">Baboon cliff viewpoints</div>
+            <div class="feature-item">2-day luxury lodge stay</div>
+          </div>
+          <p class="price">$449 per person</p>
+          <a href="#contact" class="cta-button">Book Lakeside</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 10 - Hell's Gate -->
+    <div class="book-page">
+      <div class="package-card">
+        <div class="package-image" style="background-image: url('images/packages/Hellsgate.jpg');"></div>
+        <div class="package-info">
+          <h3>Hell's Gate Adventure</h3>
+          <p class="package-subtitle">Cycle Among Wildlife</p>
+          <div class="package-features">
+            <div class="feature-item">Mountain biking through canyons</div>
+            <div class="feature-item">Rock climbing at Fischer's Tower</div>
+            <div class="feature-item">Geothermal spa experience</div>
+            <div class="feature-item">Day trip from Nairobi</div>
+          </div>
+          <p class="price">$129 per person</p>
+          <a href="#contact" class="cta-button">Book Adventure</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 11 - Budget Safari -->
+    <div class="book-page">
+      <div class="package-card">
+        <div class="package-image" style="background-image: url('images/packages/Budget.jpg');"></div>
+        <div class="package-info">
+          <h3>Budget Safari Experience</h3>
+          <p class="package-subtitle">Amazing Wildlife, Affordable Price</p>
+          <div class="package-features">
+            <div class="feature-item">3-day Maasai Mara camping</div>
+            <div class="feature-item">Group joining safari</div>
+            <div class="feature-item">All park fees included</div>
+            <div class="feature-item">Perfect for backpackers</div>
+          </div>
+          <p class="price">$399 per person</p>
+          <a href="#contact" class="cta-button">Book Budget</a>
+        </div>
+      </div>
+    </div>
+        <!-- Simple Navigation Dots -->
+  <div class="page-dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <!-- Add more dots for each package -->
   </div>
-</div>
-
-                <div class="package-card">
-  <div class="package-image" style="background-image: url('images/packages/nairobi-animal.jpg');"></div>
-  <div class="package-info">
-    <h3>Nairobi Park Experience</h3>
-    <p><strong>Wilderness in the City</strong></p>
-    <ul class="package-features">
-      <li>✅ 6-Hour Game Drive</li>
-      <li>✅ Big 4 Spotting (Lions, Rhinos, Leopards, Buffalo)</li>
-      <li>✅ Picnic Lunch at Hippo Pools</li>
-      <li>✅ Hotel Pickup & Dropoff</li>
-    </ul>
-    <p class="price">$99 / adult | $49 / child</p>
-<a href="#contact" class="cta-button">Book City Safari</a>
-</div>
-</div>  <!-- Close package-card -->
-
-<div class="package-card">
-<div class="package-image" style="background-image: url('images/packages/diani-resort-beach.jpg');"></div>
-<div class="package-info">
-<h3>Diani Beach Paradise</h3>
-<p><strong>3-Day Luxury Escape</strong></p>
-<ul class="package-features">
-<li>✅ Beachfront 5-Star Resort</li>
-<li>✅ Perfect for Weddings & Honeymoons</li>
-<li>✅ Snorkeling & Dolphin Tours</li>
-<li>✅ Spa & Gourmet Dining</li>
-</ul>
-
-<p class="price">$899 all inclusive</p>
-<a href="#contact" class="cta-button">Book Paradise</a>
-</div>
-</div>  <!-- Close package-card -->
-</div>  <!-- Close .packages -->
-</section>  <!-- Close #packages -->
+</section>
 
 <!-- ===== Experiences Gallery Section ===== -->
 <section id="gallery">
@@ -1174,6 +1281,7 @@ s0.parentNode.insertBefore(s1, s0);
 </style>
             
 </html>
+
 
 
 
