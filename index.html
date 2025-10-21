@@ -698,6 +698,78 @@
 
 .package-info {
   padding: 25px;
+}/* About Guide Section Styles */
+.about-guide {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.about-guide .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-guide h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+.guide-profile {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.guide-photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #e67e22;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.guide-bio {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.guide-bio h3 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.guide-bio p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .guide-profile {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .guide-photo {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .about-guide {
+        padding: 50px 20px;
+    }
 }
 </style>
     
@@ -721,7 +793,26 @@
         <p class="tagline">Experience the wild like never before with our exclusive safari adventures. Discover Africa's majestic wildlife in their natural habitat.</p>
         <a href="#packages" class="cta-button">Explore Packages</a>
     </header>
-    
+    <!-- About Guide Section -->
+<section class="about-guide">
+    <div class="container">
+        <h2>Meet Your Guide</h2>
+        <div class="guide-profile">
+            <!-- ADD YOUR PHOTO FILENAME HERE -->
+            <img src="guide-sos.jpg" alt="Sos - Your Kenyan Safari Guide" class="guide-photo">
+            <div class="guide-bio">
+                <h3>Hello, I'm Sos!</h3>
+                <p>I was born and raised in Kenya, and the wild has been my home for as long as I can remember. For over 4 years, I've lived and breathed the safari life, learning the secrets of the bush and the rhythms of the animals. Now, I've channeled that passion into my own company, SafaribySos.</p>
+                
+                <p>For me, the real magic of a safari isn't just checking animals off a list. It's in the <strong>interactions</strong> – the shared gasp when a leopard appears, the laughter around the campfire, and the genuine connections we build. It's about the <strong>experiences</strong> that stay with you long after you've returned home.</p>
+                
+                <p>I am fluent in English and Kiswahili, and I also speak two local vernacular languages, allowing me to offer you a truly authentic and deep connection to the land and its people.</p>
+                
+                <p>Let me share the wild heart of Kenya with you. Let's create your unforgettable adventure together.</p>
+            </div>
+        </div>
+    </div>
+</section>
     <!-- Main Content -->
     <div class="container">
         <!-- ====== SAFARI PACKAGES BOOK ====== -->
@@ -1281,6 +1372,7 @@ s0.parentNode.insertBefore(s1, s0);
 </style>
             
 </html>
+
 
 
 
